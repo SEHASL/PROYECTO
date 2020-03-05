@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
@@ -10,6 +10,8 @@ export class NcorreoComponent implements OnInit {
 
   ncorreo: FormGroup;
   submitted = false;
+  @Input() correo: any;
+  
   constructor(private formBuilder: FormBuilder) { }
 
   ngOnInit() {
@@ -18,6 +20,14 @@ export class NcorreoComponent implements OnInit {
         cuerpo: ['', [Validators.required, Validators.minLength(10)]],
         destinatario: ['', [Validators.required, Validators.email]],
       });
+      
+    if(this.correo != undefined){
+      console.log("A",this.correo);
+      this.ncorreo.patchValue({
+        titulo: 'Re: '+ this.correo.titulo, 
+        destinatario: this.correo.emisor
+      });
+    }
   }
 
   get formulario() { return this.ncorreo.controls; }
