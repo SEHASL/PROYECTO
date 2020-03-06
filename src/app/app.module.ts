@@ -7,13 +7,17 @@ import { AppComponent } from './app.component';
 import { CorreoComponent } from './Components/correo/correo.component';
 import { LcorreoComponent } from './Components/lcorreo/lcorreo.component';
 import { NcorreoComponent } from './Components/ncorreo/ncorreo.component';
+import { AvisoComponent } from './Components/aviso/aviso.component';
+import { RcorreoComponent } from './Views/rcorreo/rcorreo.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     CorreoComponent,
     LcorreoComponent,
-    NcorreoComponent
+    NcorreoComponent,
+    AvisoComponent,
+    RcorreoComponent,
   ],
   imports: [
     BrowserModule,
