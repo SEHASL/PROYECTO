@@ -19,7 +19,7 @@
     
         </tr>
         <tr *ngIf="correo.responder">
-            <app-ncorreo [correo]="correo"></app-ncorreo>
+            <app-ncorreo [correo]="correo" (accionRealizada)="accionRespuestaRapida(correo)"></app-ncorreo>
           </tr>
         </ng-container>
       </table>
