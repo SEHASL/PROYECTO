@@ -1,7 +1,8 @@
 import { Injectable, NgZone } from "@angular/core";
 import * as _ from "lodash";
-import { GoogleAuthService } from "ng-gapi/lib/GoogleAuthService";
+//import { GoogleAuthService } from "ng-gapi/lib/GoogleAuthService";
 import GoogleUser = gapi.auth2.GoogleUser;
+import { GoogleAuthService } from 'ng-gapi';
 
 @Injectable({
   providedIn: 'root'
