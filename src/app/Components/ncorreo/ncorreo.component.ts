@@ -1,6 +1,7 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { AvisosService } from 'src/app/Services/avisos.service';
+import { GmailService } from 'src/app/Services/gmail.service';
 
 @Component({
   selector: 'app-ncorreo',
@@ -14,7 +15,7 @@ export class NcorreoComponent implements OnInit {
   @Input() correo: any;
   @Output() accionRealizada: EventEmitter<any> = new EventEmitter();
   
-  constructor(private formBuilder: FormBuilder, private servicioAvisos: AvisosService) { }
+  constructor(private formBuilder: FormBuilder, private servicioAvisos: AvisosService, private gmail: GmailService) { }
 
   ngOnInit() {
       this.ncorreo = this.formBuilder.group({
@@ -41,11 +42,22 @@ export class NcorreoComponent implements OnInit {
       }
 
       let correo = this.ncorreo.value;
-      correo.leido= false;
-      correo.emisor= 'correoEmisor1@openWebinar.inv';
+
+      const texto = correo.cuerpo;
+      const destinatario = correo.destinatario;
+      const asunto = correo.titulo;
 
       this.onReset();
-      this.servicioAvisos.showMenssage(`Correo enviado a ${correo.emisor}`);;
+      
+      this.gmail.sendMessage(texto, destinatario, asunto).subscribe(
+        (response) => {
+          console.log("respuesta envio", response);
+          this.servicioAvisos.showMenssage(`Correo enviado a ${correo.destinatario}`);
+        },
+        (error) => {
+          this.servicioAvisos.showMenssage(`Fallo en el envio`);
+        }
+      );
   }
 
   onReset() {

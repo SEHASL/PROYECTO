@@ -23,9 +23,9 @@ export class LoginService {
     console.log(user);
     this.profile = user['Rt'];
     this.tokenUser = user['uc'].access_token;
-    this.userId = this.profile['Rt'];
-}
-
+    this.userId = user['Rt'].eV;
+  }
+  
   public getSessionUser(): GoogleUser {
     let user: string = sessionStorage.getItem(LoginService.SESSION_STORAGE_KEY);
     if (!user) {
