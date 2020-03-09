@@ -11,6 +11,9 @@ import { GmailService } from 'src/app/Services/gmail.service';
 export class NcorreoComponent implements OnInit {
 
   ncorreo: FormGroup;
+  indice: any;
+  aux: any;
+  total: any;
   submitted = false;
   @Input() correo: any;
   @Output() accionRealizada: EventEmitter<any> = new EventEmitter();
@@ -24,10 +27,16 @@ export class NcorreoComponent implements OnInit {
         destinatario: ['', [Validators.required, Validators.email]],
       });
       
+      var indice= this.correo.emisor.indexOf( "<" ) + 1;
+      var total = (this.correo.emisor.length);
+      if (indice != -1) {
+
+      var  aux= this.correo.emisor.substr(indice,total - indice -1);
+      }
     if(this.correo != undefined){
       this.ncorreo.patchValue({
-        titulo: 'Re: '+ this.correo.titulo, 
-        destinatario: this.correo.emisor
+        titulo: 'Re: '+ this.correo.titulo,
+        destinatario: aux
       });
     }
   }
