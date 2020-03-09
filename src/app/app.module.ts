@@ -21,6 +21,7 @@ import { MenuComponent } from './Menu/menu/menu.component';
 import { EnviarComponent } from './Views/enviar/enviar.component';
 import { InicioComponent } from './Views/inicio/inicio.component';
 import { VcorreoComponent } from './Views/vcorreo/vcorreo.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 let gapiClientConfig: NgGapiClientConfig = {
   client_id: "395684135333-7cs6mldgfgr2q531bu51el0j4hdosv0s.apps.googleusercontent.com",
@@ -60,6 +61,7 @@ let gapiClientConfig: NgGapiClientConfig = {
       provide: NG_GAPI_CONFIG,
       useValue: gapiClientConfig
     }),
+    BrowserAnimationsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
