@@ -17,6 +17,10 @@ import {
   NG_GAPI_CONFIG,
   GoogleApiConfig
 } from "ng-gapi";
+import { MenuComponent } from './Menu/menu/menu.component';
+import { EnviarComponent } from './Views/enviar/enviar.component';
+import { InicioComponent } from './Views/inicio/inicio.component';
+import { VcorreoComponent } from './Views/vcorreo/vcorreo.component';
 
 let gapiClientConfig: NgGapiClientConfig = {
   client_id: "395684135333-7cs6mldgfgr2q531bu51el0j4hdosv0s.apps.googleusercontent.com",
@@ -41,6 +45,10 @@ let gapiClientConfig: NgGapiClientConfig = {
     AvisoComponent,
     RcorreoComponent,
     LoginComponent,
+    MenuComponent,
+    EnviarComponent,
+    InicioComponent,
+    VcorreoComponent,
   ],
   imports: [
     BrowserModule,
