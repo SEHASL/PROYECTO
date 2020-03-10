@@ -1,3 +1,10 @@
-<h3>{{correo.titulo}}</h3>
+<div class="Titulo">
+    <h1>Ver correo</h1>
+</div>
+<hr>
+<mat-card>
+<h3>Asunto: {{correo.titulo}}</h3>
 <p>De: {{correo.emisor}}</p>
-<p>Mensaje: {{correo.cuerpo}}</p>
+<h3><p>Mensaje: {{correo.cuerpo}}</p></h3>
+</mat-card>
+<app-footer></app-footer>

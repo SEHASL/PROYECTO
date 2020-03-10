@@ -11,7 +11,7 @@
       <p>{{correo.titulo}}</p>
       <button mat-raised-button color="primary" (click)="verDetalle(correo)">Ver</button>
       <button mat-raised-button color="primary" (click)="clickResponder(correo)">Responder</button>
-      <div *ngIf="correo.responder">
+      <div class="Responder" *ngIf="correo.responder">
       <app-ncorreo [correo]="correo" (accionRealizada)="accionRespuestaRapida(correo)"></app-ncorreo>
       </div>
   </mat-card>

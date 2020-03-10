@@ -1,0 +1,31 @@
+mat-form-field {
+    width: 60%;
+}
+
+app-enviar mat-form-field {
+    width: 30%;
+}
+
+mat-card {
+    width: 80%;
+    margin-left: 10%;
+    margin-top: 100px;
+}
+div.Contenedor {
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 10px;
+}
+div.Botones {
+    display: inline-flex;
+    flex-direction: row;
+}
+button {
+    margin-left: 50px;
+    margin-right: 50px;
+    margin-bottom: 15px;
+    color: #E8EAF6 !important;
+}

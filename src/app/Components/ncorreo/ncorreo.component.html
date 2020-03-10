@@ -1,35 +1,43 @@
+<mat-card>
 <form [formGroup]="ncorreo" (ngSubmit)="onSubmit()">
-  <div>
-    <div>
-      <label>Titulo</label>
-      <input type="text" formControlName="titulo" />
-      <div *ngIf="submitted && formulario.titulo.errors">
-        <div>El título: </div>
-        <div *ngIf="formulario.titulo.errors.required">No puede estar vacio</div>
-        <div *ngIf="formulario.titulo.errors.minlength">Deber contener más de 3 carácteres</div>
-      </div>
-    </div>
-    <div>
-      <label>Cuerpo</label>
-      <input type="text" formControlName="cuerpo" />
-      <div *ngIf="submitted && formulario.cuerpo.errors">
-        <div>El cuerpo: </div>
-        <div *ngIf="formulario.cuerpo.errors.required">No puede estar vacio</div>
-        <div *ngIf="formulario.cuerpo.errors.minlength">Deber contener más de 10 carácteres</div>
-      </div>
-    </div>
-  </div>
-  <div>
-    <label>Destinatario</label>
-    <input type="text" formControlName="destinatario" />
-    <div *ngIf="submitted && formulario.destinatario.errors">
-      <div *ngIf="formulario.destinatario.errors.required">El destinatario no puede estar vacio</div>
-      <div *ngIf="formulario.destinatario.errors.email">El destinatario debe ser un email válido</div>
-    </div>
-  </div>
+  <div class="Contenedor">
 
-  <div>
-    <button mat-raised-button color="primary">Enviar</button>
-    <button type="reset" (click)="cancel()">Cancelar</button>
+      <mat-form-field>
+        <mat-label>Asunto</mat-label>
+        <input matInput placeholder="Asunto" formControlName="titulo">
+      </mat-form-field>
+
+      <div *ngIf="submitted && formulario.titulo.errors">
+        <p>El Asunto: </p>
+        <p> *ngIf="formulario.titulo.errors.required">No puede estar vacio</p>
+        <p> *ngIf="formulario.titulo.errors.minlength">Deber contener más de 3 carácteres</p>
+      </div>
+
+      <mat-form-field class="Textarea">
+        <mat-label>Mensaje</mat-label>
+        <textarea matInput formControlName="cuerpo" placeholder="Ejemplo de mensaje"></textarea>
+      </mat-form-field>
+
+      <div *ngIf="submitted && formulario.cuerpo.errors">
+        <p>El mensaje: </p>
+        <p *ngIf="formulario.cuerpo.errors.required">No puede estar vacio</p>
+        <p *ngIf="formulario.cuerpo.errors.minlength">Deber contener más de 10 carácteres</p>
+      </div>
+
+      <mat-form-field>
+       <mat-label>Destino</mat-label>
+       <input matInput formControlName="destinatario" placeholder="ejemplo@sehasl.site">
+      </mat-form-field>
+
+      <div *ngIf="submitted && formulario.destinatario.errors">
+        <p> *ngIf="formulario.destinatario.errors.required">El destinatario no puede estar vacio</p>
+        <p> *ngIf="formulario.destinatario.errors.email">El destinatario debe ser un email válido</p>
+      </div>
+
+    <div class="Botones">
+      <button mat-raised-button color="primary">Enviar</button>
+      <button mat-raised-button color="accent" type="reset" (click)="cancel()">Cancelar</button>
+    </div>
   </div>
 </form> 
+</mat-card>

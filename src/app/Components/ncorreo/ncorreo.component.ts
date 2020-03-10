@@ -27,13 +27,13 @@ export class NcorreoComponent implements OnInit {
         destinatario: ['', [Validators.required, Validators.email]],
       });
       
+    if(this.correo != undefined){
       var indice= this.correo.emisor.indexOf( "<" ) + 1;
       var total = (this.correo.emisor.length);
       if (indice != -1) {
 
-      var  aux= this.correo.emisor.substr(indice,total - indice -1);
+      var  aux= this.correo.emisor.substr(indice,total - indice);
       }
-    if(this.correo != undefined){
       this.ncorreo.patchValue({
         titulo: 'Re: '+ this.correo.titulo,
         destinatario: aux
