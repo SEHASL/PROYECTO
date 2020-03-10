@@ -22,6 +22,9 @@ import { EnviarComponent } from './Views/enviar/enviar.component';
 import { InicioComponent } from './Views/inicio/inicio.component';
 import { VcorreoComponent } from './Views/vcorreo/vcorreo.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatSliderModule } from '@angular/material/slider';
+import { MatButtonModule} from '@angular/material/button';
+import {MatMenuModule} from '@angular/material/menu';
 
 let gapiClientConfig: NgGapiClientConfig = {
   client_id: "395684135333-7cs6mldgfgr2q531bu51el0j4hdosv0s.apps.googleusercontent.com",
@@ -50,6 +53,7 @@ let gapiClientConfig: NgGapiClientConfig = {
     EnviarComponent,
     InicioComponent,
     VcorreoComponent,
+    
   ],
   imports: [
     BrowserModule,
@@ -62,6 +66,9 @@ let gapiClientConfig: NgGapiClientConfig = {
       useValue: gapiClientConfig
     }),
     BrowserAnimationsModule,
+    MatSliderModule,
+    MatButtonModule,
+    MatMenuModule
   ],
   providers: [],
   bootstrap: [AppComponent]

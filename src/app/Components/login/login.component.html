@@ -1,14 +1,12 @@
-<div *ngIf="login.isUserSignedIn()">
+<hr>
+<div class="Iniciado" *ngIf="login.isUserSignedIn()">
 	<div>
 		<p>Nombre: {{login.profile.Ad}}</p>
 		<p>Email: {{login.profile.Au}}</p>
-		<hr>
-		<button (click)="signOut()">Desconectar</button>
-		<hr>
+		<button mat-raised-button color="white" (click)="signOut()">Desconectar</button>
 	</div>
 </div>
-<div *ngIf="!login.isUserSignedIn()">
-	<hr>
-	<button (click)="signIn()"><span>Conectar con Google</span></button>
-	<hr>
+<div class="NoIniciado" *ngIf="!login.isUserSignedIn()">
+	<button mat-raised-button color="accent" (click)="signIn()"><span>Conectar con Google</span></button>
 </div>
+<hr>

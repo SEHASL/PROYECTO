@@ -8,10 +8,10 @@ import { CorreoComponent } from './Components/correo/correo.component';
 
 const routes: Routes = [
   { path: '', component: InicioComponent },
-  { path: 'home', component: InicioComponent },
-  { path: 'mails', component: RcorreoComponent },
-  { path: 'send', component: EnviarComponent },
-  { path: 'mail', component: CorreoComponent }
+  { path: 'Inicio', component: InicioComponent },
+  { path: 'Correos', component: RcorreoComponent },
+  { path: 'Enviar', component: EnviarComponent },
+  { path: 'Correo', component: CorreoComponent }
 ];
 
 @NgModule({
