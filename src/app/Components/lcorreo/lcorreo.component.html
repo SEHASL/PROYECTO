@@ -1,21 +1,18 @@
-<table style="width: 100%; border: 1px solid black;">
-  <tr>
-    <th>Emisor</th>
-    <th>Titulo</th>
-    <th>Responder</th>
-  </tr>
+<mat-card class="Cabecera">
+    <p><strong>Emisor</strong></p>
+    <p><strong>Titulo</strong></p>
+    <p><strong>Ver</strong></p>
+    <p><strong>Responder</strong></p>
+    <p class="Algo"></p>
+</mat-card>
   <ng-container *ngFor="let correo of correos; index as i;">
-    <tr>
-      <td>{{correo.emisor}}</td>
-      <td>{{correo.titulo}}</td>
-      <td>
-        <button mat-raised-button color="primary" (click)="verDetalle(correo)">Ver</button>
-        <button mat-raised-button color="primary" (click)="clickResponder(correo)">Responder</button>
-      </td>
-
-    </tr>
-    <tr *ngIf="correo.responder">
+    <mat-card>
+      <p>{{correo.emisor}}</p>
+      <p>{{correo.titulo}}</p>
+      <button mat-raised-button color="primary" (click)="verDetalle(correo)">Ver</button>
+      <button mat-raised-button color="primary" (click)="clickResponder(correo)">Responder</button>
+      <div *ngIf="correo.responder">
       <app-ncorreo [correo]="correo" (accionRealizada)="accionRespuestaRapida(correo)"></app-ncorreo>
-    </tr>
+      </div>
+  </mat-card>
   </ng-container>
-</table>

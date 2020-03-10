@@ -62,6 +62,6 @@ export class LcorreoComponent implements OnInit {
     console.warn("ERROR");
   }
   verDetalle(correo){
-    this.router.navigate(['/mail', {correo: JSON.stringify(correo)}]);
+    this.router.navigate(['/Correo', {correo: JSON.stringify(correo)}]);
   }
 }

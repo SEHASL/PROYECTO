@@ -1,0 +1,33 @@
+mat-card {
+    display: inline-flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 90%;
+    height: 50px;
+    margin-left: 5%;
+    margin-top: 20px;
+}
+mat-card.Cabecera {
+    display: inline-flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 90%;
+    height: 50px;
+    margin-left: 5%;
+    margin-top: 20px;
+}
+p {
+    width: 20%;
+    height: 100%;
+    display: inline-flex;
+    justify-content: center;
+}
+button {
+    width: 20%;
+}
+p.Algo {
+    height: 0px;
+    display: none;
+}
