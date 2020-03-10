@@ -16,3 +16,12 @@ hr {
     background-size: 100%;
     background-position: center;
 }
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+app-footer {
+  width: 100%;
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+}

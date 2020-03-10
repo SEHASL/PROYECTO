@@ -24,7 +24,13 @@ import { VcorreoComponent } from './Views/vcorreo/vcorreo.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatSliderModule } from '@angular/material/slider';
 import { MatButtonModule} from '@angular/material/button';
-import {MatMenuModule} from '@angular/material/menu';
+import {MatMenuModule } from '@angular/material/menu';
+import {MatInputModule } from '@angular/material/input';
+import {MatCardModule } from '@angular/material/card';
+import { MatTableModule } from '@angular/material/table';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { FooterComponent } from './Components/footer/footer.component';
+
 
 let gapiClientConfig: NgGapiClientConfig = {
   client_id: "395684135333-7cs6mldgfgr2q531bu51el0j4hdosv0s.apps.googleusercontent.com",
@@ -53,7 +59,7 @@ let gapiClientConfig: NgGapiClientConfig = {
     EnviarComponent,
     InicioComponent,
     VcorreoComponent,
-    
+    FooterComponent
   ],
   imports: [
     BrowserModule,
@@ -68,7 +74,11 @@ let gapiClientConfig: NgGapiClientConfig = {
     BrowserAnimationsModule,
     MatSliderModule,
     MatButtonModule,
-    MatMenuModule
+    MatMenuModule,
+    MatInputModule,
+    MatCardModule,
+    MatTableModule,
+    MatSnackBarModule
   ],
   providers: [],
   bootstrap: [AppComponent]
